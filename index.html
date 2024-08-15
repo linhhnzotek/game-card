@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Screen</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <img src="assets/banner.png" alt="Logo" class="logo">
+    </div>
+    <div class="container">
+        <div class="g-section section-1 campaign-box">
+            <img src="assets/campaign.jpg" alt="Campaign Image" class="campaign-image">
+            <div class="campaign-info">
+                <p><strong>Admin:</strong></p>
+                <p>3回カードを引いて3連続で当たりが出たら...</p>
+                <p>Here The first Campaign</p>
+                <p>\ハズレてもLINEシェアしてリトライできるよ！/</p>
+            </div>
+            <button class="start-button" onclick="switchSection(2)">ゲームスタート！</button>
+        </div>
+
+        <div class="g-section section-2 campaign-box-game d-none">
+            <div class="card-container">
+                <div class="card" card-no="1" >
+                    <img src="assets/card.gif" alt="Card 1" class="card-img">
+                </div>
+                <div class="card" card-no="2">
+                    <img src="assets/card.gif" alt="Card 2" class="card-img">
+                </div>
+                <div class="card" card-no="3">
+                    <img src="assets/card.gif" alt="Card 3" class="card-img">
+                </div>
+            </div>
+            <div class="button-container">
+                <button class="submit-button"  onclick="switchSection(3)" disabled="true">Submit</button>
+            </div>
+        </div>
+
+        <div class="g-section section-3 campaign-box d-none">
+            <img src="assets/loading.gif" alt="Loading" class="campaign-image">
+            
+        </div>
+        <div class="g-section section-4 campaign-box d-none">
+            <img id="result" src="assets/win.png" class="campaign-image">
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        LIST_CARD = [1,2,3]; 
+        GIFT_CARD_NUMBER = LIST_CARD[Math.floor(Math.random() * LIST_CARD.length)]
+        CARD_SELECTED = null;
+        highLightCardCorrect();
+        function switchSection(step = 1) {
+            $('.g-section').hide();
+            $('.section-' + step).show();
+            if (step == 3) {
+                setTimeout(function(){
+                    switchSection(4)
+                }, 5000);
+            }
+        }
+
+        $('.card').click(function(){
+            $('.card').removeClass('card-selected')
+            card_no = $(this).attr('card-no');
+            CARD_SELECTED = card_no;
+            $(this).addClass('card-selected')
+            $('.submit-button').prop('disabled', false);
+            
+            img_result = (GIFT_CARD_NUMBER == CARD_SELECTED) ? 'assets/win.png' : 'assets/lose.png';
+            $('#result').attr('src', img_result);   
+        })
+
+        function highLightCardCorrect() {
+            $('div[card-no="' + GIFT_CARD_NUMBER + '"]').addClass('hint')
+        }
+
+    </script>
+</body>
+</html>

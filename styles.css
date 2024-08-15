@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #bceff0;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.campaign-title h2 {
+    background-color: #168bbf;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 0;
+}
+
+.campaign-box {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.campaign-box-game {
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.campaign-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.campaign-info {
+    background-color: #f1f3f4;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.start-button {
+    background-color: #ffde4b;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.start-button:hover {
+    background-color: #ffd700;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.card:hover {
+    border-color: red;
+    border-width: 1px;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Căn nút giữa */
+    margin-top: 20px; /* Tạo khoảng cách từ các thẻ bài tới nút */
+}
+
+.submit-button {
+    background-color: #ffde4b;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none; /* Loại bỏ gạch chân mặc định của thẻ <a> */
+    color: black; /* Màu chữ cho nút */
+}
+
+.submit-button:hover {
+    background-color: #ffd700;
+}
+
+.d-none {
+    display: none;
+}
+
+.card-selected {
+    border-color: red;
+    border-width: 1px; 
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.hint {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 2px 4px;
+}
