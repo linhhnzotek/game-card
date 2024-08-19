@@ -28,14 +28,17 @@
             <main class="flex-shrink-0">
 
                 <!-- Section 10 -->
-                <div class="section section-10 d-none">
-                    <div class="my-3 p-3 bg-body rounded shadow-sm">
-                        
+                <div class="section section-0">
+                    <div class="my-3 p-3 bg-body rounded">
+                        <div class="d-grid gap-2 col-6 mx-auto mt-p20">
+                            <button class="btn bg-cobalt text-white mb-3 py-3" type="button" onclick="switchSection(1)">既存のお客様</button>
+                            <button class="btn bg-cobalt text-white mb-3 py-3" type="button" onclick="switchSection(1)">新規のお客様</button>
+                          </div>
                     </div>
                 </div>
 
                 <!-- Section 1 -->
-                <div class="section section-1">
+                <div class="section section-1 d-none">
                     <div class="my-3 p-3 bg-body rounded shadow-sm">
                         <h6 class="border-bottom pb-2 mb-0">挨拶</h6>
                         <div class="d-flex text-muted pt-3">
@@ -77,7 +80,7 @@
                         </div>
                     </div>
                     <div class="text-center pb-3">
-                        <button class="btn btn-secondary px-5" onclick="switchSection(2)">アンケートに進む</a>
+                        <button class="btn bg-cobalt text-white px-5" onclick="switchSection(2)">アンケートに進む</a>
                     </div>
                 </div>
 
@@ -164,8 +167,8 @@
                                 </div>
                             </form>
                             <div class="text-center py-3">
-                                <button class="btn btn-secondary mb-2" style="width: 200px;" onclick="switchSection(1)">戻る</button>
-                                <button class="btn btn-secondary mb-2" style="width: 200px;" onclick="switchSection(3)">回答確認へ</button>
+                                <button class="btn bg-cobalt text-white mb-2 w-200" onclick="switchSection(1)">戻る</button>
+                                <button class="btn bg-cobalt text-white mb-2 w-200" onclick="switchSection(3)">回答確認へ</button>
                             </div>
                         </div>
                         
@@ -207,8 +210,8 @@
                             </div>
 
                             <div class="text-center py-3 pt-4">
-                                <button class="btn btn-secondary px-5" onclick="switchSection(2)">戻る</button>
-                                <button class="btn btn-secondary px-5" onclick="switchSection(4)">回答</button>
+                                <button class="btn mb-2 w-200 bg-cobalt text-white" onclick="switchSection(2)">戻る</button>
+                                <button class="btn mb-2 w-200 bg-cobalt text-white" onclick="switchSection(4)">回答</button>
                             </div>
                         </div>
                     </div>
@@ -277,7 +280,7 @@
             }
 
             initResult();
-            // switchSection(2) 
+            // switchSection(10) 
             function switchSection(step = 1) {
                 $('.section').addClass('d-none');
                 $('.section-' + step).removeClass('d-none');
