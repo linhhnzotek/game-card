@@ -33,7 +33,7 @@
                         <div class="d-grid gap-2 col-6 mx-auto mt-p20">
                             <button class="btn bg-cobalt text-white mb-3 py-3" type="button" onclick="switchSection(1)">既存のお客様</button>
                             <button class="btn bg-cobalt text-white mb-3 py-3" type="button" onclick="switchSection(1)">新規のお客様</button>
-                          </div>
+                        </div>
                     </div>
                 </div>
 
@@ -166,9 +166,9 @@
                                     </div>
                                 </div>
                             </form>
-                            <div class="text-center py-3">
-                                <button class="btn bg-cobalt text-white mb-2 w-200" onclick="switchSection(1)">戻る</button>
-                                <button class="btn bg-cobalt text-white mb-2 w-200" onclick="switchSection(3)">回答確認へ</button>
+                            <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center mt-3">
+                                <button type="button" class="btn bg-cobalt text-white m-2 w-200 order-2 order-sm-1" onclick="switchSection(1)">戻る</button>
+                                <button type="button" class="btn bg-cobalt text-white m-2 w-200 order-1 order-sm-2" onclick="switchSection(3)">回答確認へ</button>
                             </div>
                         </div>
                         
@@ -209,9 +209,9 @@
                                 <div class="col-md-7 col-xs-12 text-muted font-14 cf-q4"> - </div>
                             </div>
 
-                            <div class="text-center py-3 pt-4">
-                                <button class="btn mb-2 w-200 bg-cobalt text-white" onclick="switchSection(2)">戻る</button>
-                                <button class="btn mb-2 w-200 bg-cobalt text-white" onclick="switchSection(4)">回答</button>
+                            <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center mt-3">
+                                <button type="button" class="btn bg-cobalt text-white m-2 w-200 order-2 order-sm-1" onclick="switchSection(2)">戻る</button>
+                                <button type="button" class="btn bg-cobalt text-white m-2 w-200 order-1 order-sm-2" onclick="switchSection(4)">回答</button>
                             </div>
                         </div>
                     </div>
@@ -221,7 +221,7 @@
                 <div class="section section-4 d-none">
                     <div class="my-3 p-3 bg-body rounded shadow-sm">
                         <div class="text-center">
-                            <img src="assets/start_game.svg" alt="Game Intro" class="" height="400">
+                            <img src="assets/start_game.svg" alt="Game Intro" class="" height="300">
                             <div class="py-3">
                                 <button type="button" class="btn btn-danger px-5 rounded-pill" onclick="switchSection(5)">Join game</button>
                             </div>
@@ -233,7 +233,7 @@
                 <div class="section section-5 d-none">
                     <div class="my-3 p-3 bg-body rounded shadow-sm">
                         <div class="text-center">
-                            <img src="assets/loading.gif" class="" height="400">
+                            <img src="assets/loading.gif" class="" height="300">
                         </div>
                     </div>
                 </div>
@@ -242,7 +242,7 @@
                 <div class="section section-6 d-none">
                     <div class="my-3 p-3 bg-body rounded shadow-sm">
                         <div class="text-center">
-                            <img src="assets/drop.gif" class="" height="400">
+                            <img src="assets/drop.gif" class="" height="300">
                         </div>
                     </div>
                 </div>
@@ -251,7 +251,7 @@
                 <div class="section section-7 d-none">
                     <div class="my-3 p-3 bg-body rounded shadow-sm">
                         <div class="text-center">
-                            <img id="end-result" src="" class="" height="400">
+                            <img id="end-result" src="" class="" height="300">
                         </div>
                         <div id="modal-gif" class="text-center py-3 d-none">
                             <button type="button" class="btn mb-2 w-200 bg-cobalt text-white"  data-bs-toggle="modal" data-bs-target="#exampleModal">景品交換する</button>
@@ -298,7 +298,7 @@
                 $('.cf-q1').html($('input[name="q1"]:checked').val())
                 $('.cf-q2').html($('input[name="q2"]:checked').val())
                 $('.cf-q3').html($('select[name="q3"]').val())
-                $('.cf-q4').html($('textarea[name="q4"]').val())
+                $('.cf-q4').html($( 'textarea[name="q4"]' ).val().replace(/\n/g, '<br />'))
             }
 
             initResult();
