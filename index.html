@@ -26,11 +26,10 @@
             </header>
             <!-- Begin page content -->
             <main class="flex-shrink-0">
-
                 <!-- Section 1 -->
                 <div class="section section-1">
                     <div class="my-3 p-3 bg-body rounded shadow-sm">
-                        <h6 class="border-bottom pb-2 mb-0">About U.</h6>
+                        <h6 class="border-bottom pb-2 mb-0">About Us</h6>
                         <div class="d-flex text-muted pt-3">
                             <p class="pb-3 mb-0 small lh-sm ">
                                 Honda Cars 札幌中央をご愛顧頂きありがとうございます。
@@ -76,108 +75,44 @@
 
                 <!-- Section 2 -->
                 <div class="section section-2 d-none">
-                    <div class="text-center mt-p20">
-                        <div class="my-3 p-3 bg-body rounded shadow-sm">
-                            <form>
-                                <h1 class="h3 mb-3 fw-normal">ールに記載の顧客番号を入力してください。</h1>
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="floatingInput" placeholder="" />
-                                    <label for="floatingInput">ID</label>
-                                </div>
-                                <button type="button" class="btn btn-secondary px-5" onclick="switchSection(3)">設問に進む</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Section 3 -->
-                <div class="section section-3 d-none">
                     <div class="my-3 p-3 bg-body rounded shadow-sm">
                         <div class="">
                             <h4 class="mb-3">設問</h4>
                             <form class="needs-validation" novalidate>
                                 <div class="row g-3">
-                                    <div class="col-6">
-                                        <label for="firstName" class="form-label fw-bold">First name</label>
-                                        <input type="text" class="form-control" id="firstName" placeholder="" value="" required />
+                                    <div class="col-12">
+                                        <label for="user_code" class="form-label fw-bold">顧客番号</label>
+                                        <input type="text" class="form-control" id="user_code" name="user_code" placeholder="A12345678" required autocomplete="off"/>
                                         <div class="invalid-feedback">
-                                            Valid first name is required.
-                                        </div>
-                                    </div>
-                        
-                                    <div class="col-6">
-                                        <label for="lastName" class="form-label fw-bold">Last name</label>
-                                        <input type="text" class="form-control" id="lastName" placeholder="" value="" required />
-                                        <div class="invalid-feedback">
-                                            Valid last name is required.
+                                            Please enter your user code.
                                         </div>
                                     </div>
 
                                     <div class="col-12">
-                                        <label for="email" class="form-label fw-bold">Email <span class="text-muted">(Optional)</span></label>
-                                        <input type="email" class="form-control" id="email" placeholder="you@example.com" />
+                                        <label class="form-label fw-bold" for="fullname">名前</label>
+                                        <input type="text" class="form-control" id="fullname" name="fullname" autocomplete="off"/>
                                         <div class="invalid-feedback">
-                                            Please enter a valid email address for shipping updates.
+                                            Please enter your full name.
                                         </div>
                                     </div>
                                     
-                                    <div class="col-12">
-                                        <label for="address" class="form-label fw-bold">Address</label>
-                                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required />
-                                        <div class="invalid-feedback">
-                                            Please enter your shipping address.
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-5">
-                                        <label for="country" class="form-label fw-bold">Country</label>
-                                        <select class="form-select" id="country" required>
-                                            <option value="">Choose...</option>
-                                            <option>United States</option>
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            Please select a valid country.
-                                        </div>
-                                    </div>
-                        
-                                    <div class="col-md-4">
-                                        <label for="state" class="form-label fw-bold">State</label>
-                                        <select class="form-select" id="state" required>
-                                            <option value="">Choose...</option>
-                                            <option>California</option>
-                                        </select>
-                                        <div class="invalid-feedback">
-                                            Please provide a valid state.
-                                        </div>
-                                    </div>
-                        
-                                    <div class="col-md-3">
-                                        <label for="zip" class="form-label fw-bold">Zip</label>
-                                        <input type="text" class="form-control" id="zip" placeholder="" required />
-                                        <div class="invalid-feedback">
-                                            Zip code required.
-                                        </div>
-                                    </div>
-
-                                    
-
                                     <div class="col-12">
                                         <label class="form-label fw-bold" for="exampleFormControlTextarea1">●月●日に発売しました新型●●について</label>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                                            <label class="form-check-label" for="exampleRadios1">
+                                            <input class="form-check-input" type="radio" name="q1" id="q1a" value="カタログがほしい">
+                                            <label class="form-check-label" for="q1a">
                                                 カタログがほしい
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                            <label class="form-check-label" for="exampleRadios2">
+                                            <input class="form-check-input" type="radio" name="q1" id="q1b" value="試乗したい">
+                                            <label class="form-check-label" for="q1b">
                                                 試乗したい
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option2">
-                                            <label class="form-check-label" for="exampleRadios3">
+                                            <input class="form-check-input" type="radio" name="q1" id="q1c" value="興味がない">
+                                            <label class="form-check-label" for="q1c">
                                                 興味がない
                                             </label>
                                         </div>
@@ -186,14 +121,14 @@
                                     <div class="col-12">
                                         <label class="form-label fw-bold" for="exampleFormControlTextarea2">次回購入予定のお車は新車or 中古車</label>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios12" value="option1">
-                                            <label class="form-check-label" for="exampleRadios12">
+                                            <input class="form-check-input" type="radio" name="q2" id="q2a" value="新車">
+                                            <label class="form-check-label" for="q2a">
                                                 新車
                                             </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="exampleRadios2" id="exampleRadios22" value="option2">
-                                            <label class="form-check-label" for="exampleRadios22">
+                                            <input class="form-check-input" type="radio" name="q2" id="q2b" value="中古車">
+                                            <label class="form-check-label" for="q2b">
                                                 中古車
                                             </label>
                                         </div>
@@ -201,13 +136,13 @@
 
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label class="form-label fw-bold" for="exampleFormControlSelect1">次回購入予定はいつごろですか？</label>
-                                            <select class="form-control" id="exampleFormControlSelect1">
-                                                <option>3カ月以内</option>
-                                                <option>6カ月以内</option>
-                                                <option>1年以内</option>
-                                                <option>次回車検時</option>
-                                                <option>購入予定なし</option>
+                                            <label class="form-label fw-bold" for="q3">次回購入予定はいつごろですか？</label>
+                                            <select class="form-control" name="q3" id="q3">
+                                                <option value="3カ月以内">3カ月以内</option>
+                                                <option value="6カ月以内">6カ月以内</option>
+                                                <option value="1年以内">1年以内</option>
+                                                <option value="次回車検時">次回車検時</option>
+                                                <option value="購入予定なし">購入予定なし</option>
                                             </select>
                                         </div>
                                     </div>
@@ -215,29 +150,70 @@
                                     <div class="col-12">
                                         <div class="form-group">
                                             <label class="form-label fw-bold" for="exampleFormControlTextarea1">次回購入予定のお車の車名を入力</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" name="q4" rows="3"></textarea>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                             <div class="text-center py-3">
-                                <button class="btn btn-secondary px-5" onclick="switchSection(2)">戻る</button>
-                                <button class="btn btn-secondary px-5" onclick="switchSection(4)">回答確認へ</button>
+                                <button class="btn btn-secondary px-5" onclick="switchSection(1)">戻る</button>
+                                <button class="btn btn-secondary px-5" onclick="switchSection(3)">回答確認へ</button>
                             </div>
                         </div>
                         
                     </div>
                 </div>
 
+                <!-- Section 3 -->
+                <div class="section section-3 d-none">
+                    <div class="my-3 p-3 bg-body rounded shadow-sm">
+                        <div class="p-3">
+                            <div class="row mb-2 p-2 border-bottom">
+                                <div class="col-5 fw-bold">顧客番号</div>
+                                <div class="col-7 confirm-field cf-user_code"> - </div>
+                            </div>
+    
+                            <div class="row mb-2 p-2 border-bottom">
+                                <div class="col-5 fw-bold">名前</div>
+                                <div class="col-7 confirm-field cf-fullname"> - </div>
+                            </div>
+    
+                            <div class="row mb-2 p-2 border-bottom">
+                                <div class="col-5 fw-bold">●月●日に発売しました新型●●について</div>
+                                <div class="col-7 confirm-field cf-q1"> - </div>
+                            </div>
+    
+                            <div class="row mb-2 p-2 border-bottom">
+                                <div class="col-5 fw-bold">次回購入予定のお車は新車or 中古車</div>
+                                <div class="col-7 confirm-field cf-q2"> - </div>
+                            </div>
+    
+                            <div class="row mb-2 p-2 border-bottom">
+                                <div class="col-5 fw-bold">次回購入予定はいつごろですか？</div>
+                                <div class="col-7 confirm-field cf-q3"> - </div>
+                            </div>
+    
+                            <div class="row mb-2 p-2 border-bottom">
+                                <div class="col-5 fw-bold">次回購入予定のお車の車名を入力</div>
+                                <div class="col-7 confirm-field cf-q4"> - </div>
+                            </div>
+
+                            <div class="text-center py-3 pt-4">
+                                <button class="btn btn-secondary px-5" onclick="switchSection(2)">戻る</button>
+                                <button class="btn btn-secondary px-5" onclick="switchSection(4)">回答</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Section 4 -->
                 <div class="section section-4 d-none">
-                    <div class="text-center mt-p20">
-                        <div class="my-3 p-3 bg-body rounded shadow-sm">
-                            <form>
-                                <h1 class="h3 mb-3 fw-normal">アンケートにご協力頂きありがとうございました。</h1>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, suscipit laborum nesciunt, aperiam molestiae cumque eveniet dolor error odit harum accusamus sapiente reprehenderit tempore magnam inventore maiores. Ducimus, quidem culpa !</p>
-                                <button type="button" class="btn btn-secondary px-5" onclick="switchSection(5)">抽選</button>
-                            </form>
+                    <div class="my-3 p-3 bg-body rounded shadow-sm">
+                        <div class="text-center">
+                            <img src="assets/game-intro.png" alt="Game Intro" class="" height="400">
+                            <div class="py-3">
+                                <button type="button" class="btn btn-danger px-5 rounded-pill" onclick="switchSection(4)">Join game</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -246,10 +222,7 @@
                 <div class="section section-5 d-none">
                     <div class="my-3 p-3 bg-body rounded shadow-sm">
                         <div class="text-center">
-                            <img src="assets/game-intro.png" alt="Game Intro" class="" height="400">
-                            <div class="py-3">
-                                <button type="button" class="btn btn-danger px-5 rounded-pill" onclick="switchSection(6)">Join game</button>
-                            </div>
+                            <img src="assets/spining.gif" class="" height="400">
                         </div>
                     </div>
                 </div>
@@ -258,22 +231,13 @@
                 <div class="section section-6 d-none">
                     <div class="my-3 p-3 bg-body rounded shadow-sm">
                         <div class="text-center">
-                            <img src="assets/spining.gif" class="" height="400">
+                            <img src="assets/drop.gif" class="" height="400">
                         </div>
                     </div>
                 </div>
 
                 <!-- Section 7 -->
                 <div class="section section-7 d-none">
-                    <div class="my-3 p-3 bg-body rounded shadow-sm">
-                        <div class="text-center">
-                            <img src="assets/drop.gif" class="" height="400">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Section 8 -->
-                <div class="section section-8 d-none">
                     <div class="my-3 p-3 bg-body rounded shadow-sm">
                         <div class="text-center">
                             <img id="end-result" src="assets/drop.gif" class="" height="400">
@@ -285,7 +249,7 @@
 
         <footer class="footer mt-auto py-3 bg-light">
             <div class="container">
-                <span class="text-muted">Copyright © 株式会社ホンダカーズ札幌中央 All Rights Reserved.</span>
+                <span class="text-muted font-14">Copyright © 株式会社ホンダカーズ札幌中央 All Rights Reserved.</span>
             </div>
         </footer>
 
@@ -293,20 +257,31 @@
         <script>
             LIST_RESULT = ['assets/win.png', 'assets/lose.png']
             LINK_RESULT = LIST_RESULT[Math.floor(Math.random() * LIST_RESULT.length)]
+            
+
+            function fillDataConfirm() {
+                $('.cf-user_code').html($('input[name="user_code"]').val())
+                $('.cf-fullname').html($('input[name="fullname"]').val())
+                $('.cf-q1').html($('input[name="q1"]:checked').val())
+                $('.cf-q2').html($('input[name="q2"]:checked').val())
+                $('.cf-q3').html($('select[name="q3"]').val())
+                $('.cf-q4').html($('textarea[name="q4"]').val())
+            }
 
             initResult();
-
+            // switchSection(2) 
             function switchSection(step = 1) {
                 $('.section').addClass('d-none');
                 $('.section-' + step).removeClass('d-none');
+                fillDataConfirm();
+                if (step == 5) {
+                    setTimeout(function(){
+                        switchSection(6)
+                    }, 10000);
+                }
                 if (step == 6) {
                     setTimeout(function(){
                         switchSection(7)
-                    }, 10000);
-                }
-                if (step == 7) {
-                    setTimeout(function(){
-                        switchSection(8)
                     }, 5000);
                 }
             }
