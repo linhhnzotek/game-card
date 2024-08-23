@@ -95,7 +95,7 @@
                             <form class="needs-validation" novalidate>
                                 <div class="row g-3">
                                     <div class="col-12">
-                                        <h6 for="user_code">顧客番号</h6>
+                                        <h6 for="user_code">設問1：顧客番号</h6>
                                         <input type="text" class="form-control text-muted font-14" id="user_code" name="user_code" placeholder="A12345678" required autocomplete="off"/>
                                         <div class="invalid-feedback">
                                             Please enter your user code.
@@ -103,7 +103,7 @@
                                     </div>
 
                                     <div class="col-12">
-                                        <h6 class="" for="fullname">名前</h6>
+                                        <h6 class="" for="fullname">設問2：名前</h6>
                                         <input type="text" class="form-control text-muted font-14" id="fullname" name="fullname" autocomplete="off"/>
                                         <div class="invalid-feedback">
                                             Please enter your full name.
@@ -111,7 +111,7 @@
                                     </div>
                                     
                                     <div class="col-12">
-                                        <h6 class="" for="exampleFormControlTextarea1">●月●日に発売しました新型●●について</h6>
+                                        <h6 class="" for="exampleFormControlTextarea1">設問3：●月●日に発売しました新型●●について</h6>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="q1" id="q1a" value="カタログがほしい">
                                             <label class="form-check-label text-muted font-14" for="q1a">
@@ -133,7 +133,7 @@
                                     </div>
 
                                     <div class="col-12">
-                                        <h6 class="" for="exampleFormControlTextarea2">次回購入予定のお車は新車or 中古車</h6>
+                                        <h6 class="" for="exampleFormControlTextarea2">設問4：次回購入予定のお車は新車or 中古車</h6>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="q2" id="q2a" value="新車">
                                             <label class="form-check-label text-muted font-14" for="q2a">
@@ -150,7 +150,7 @@
 
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <h6 class="" for="q3">次回購入予定はいつごろですか？</h6>
+                                            <h6 class="" for="q3">設問5：次回購入予定はいつごろですか？</h6>
                                             <select class="form-control text-muted font-14" name="q3" id="q3">
                                                 <option value="3カ月以内">3カ月以内</option>
                                                 <option value="6カ月以内">6カ月以内</option>
@@ -163,7 +163,7 @@
 
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <h6 class="" for="exampleFormControlTextarea1">次回購入予定のお車の車名を入力</h6>
+                                            <h6 class="" for="exampleFormControlTextarea1">設問6：次回購入予定のお車の車名を入力</h6>
                                             <textarea class="form-control text-muted font-14" id="exampleFormControlTextarea1" name="q4" rows="3"></textarea>
                                         </div>
                                     </div>
@@ -183,32 +183,32 @@
                     <div class="my-3 p-3 bg-body rounded shadow-sm">
                         <div class="">
                             <div class="row mb-2 pb-3 border-bottom">
-                                <div class="col-xs-12 ">顧客番号</div>
+                                <div class="col-xs-12 ">設問1：顧客番号</div>
                                 <div class="col-xs-12 text-muted font-14 cf-user_code"> - </div>
                             </div>
     
                             <div class="row mb-2 pb-3 border-bottom">
-                                <div class="col-xs-12">名前</div>
+                                <div class="col-xs-12">設問2：名前</div>
                                 <div class="col-xs-12 text-muted font-14 cf-fullname"> - </div>
                             </div>
     
                             <div class="row mb-2 pb-3 border-bottom">
-                                <div class="col-xs-12">●月●日に発売しました新型●●について</div>
+                                <div class="col-xs-12">設問3：●月●日に発売しました新型●●について</div>
                                 <div class="col-xs-12 text-muted font-14 cf-q1"> - </div>
                             </div>
     
                             <div class="row mb-2 pb-3 border-bottom">
-                                <div class="col-xs-12">次回購入予定のお車は新車or 中古車</div>
+                                <div class="col-xs-12">設問4：次回購入予定のお車は新車or 中古車</div>
                                 <div class="col-xs-12 text-muted font-14 cf-q2"> - </div>
                             </div>
     
                             <div class="row mb-2 pb-3 border-bottom">
-                                <div class="col-xs-12">次回購入予定はいつごろですか？</div>
+                                <div class="col-xs-12">設問5：次回購入予定はいつごろですか？</div>
                                 <div class="col-xs-12 text-muted font-14 cf-q3"> - </div>
                             </div>
     
                             <div class="row mb-2 pb-3 border-bottom">
-                                <div class="col-xs-12">次回購入予定のお車の車名を入力</div>
+                                <div class="col-xs-12">設問6：次回購入予定のお車の車名を入力</div>
                                 <div class="col-xs-12 text-muted font-14 cf-q4"> - </div>
                             </div>
 
@@ -245,7 +245,10 @@
                 <div class="section section-6 d-none">
                     <div class="my-3 p-3 bg-body rounded shadow-sm">
                         <div class="text-center">
-                            <img src="assets/drop.gif" class="" height="300">
+                            <img id="end-result" src="" class="" height="300">
+                        </div>
+                        <div id="modal-gif" class="text-center py-3 d-none">
+                            <button type="button" class="btn mb-2 w-200 bg-cobalt text-white"  data-bs-toggle="modal" data-bs-target="#exampleModal">景品交換する</button>
                         </div>
                     </div>
                 </div>
@@ -253,11 +256,39 @@
                 <!-- Section 7 -->
                 <div class="section section-7 d-none">
                     <div class="my-3 p-3 bg-body rounded shadow-sm">
-                        <div class="text-center">
-                            <img id="end-result" src="" class="" height="300">
-                        </div>
-                        <div id="modal-gif" class="text-center py-3 d-none">
-                            <button type="button" class="btn mb-2 w-200 bg-cobalt text-white"  data-bs-toggle="modal" data-bs-target="#exampleModal">景品交換する</button>
+                        <div class="">
+                            <div class="result-lose py-5 text-center mt-p20">
+                               <h3>残念。アンケートにご協力を頂きありがとうございました。</h3> 
+                            </div>
+
+                            <div class="result-win py-5">
+                                <div class="msg text-center"> <h3>当選おめでとうございます！</h3> </div>
+
+                                <div class="row justify-content-center py-3">
+                                    <div class="card mb-3" style="max-width: 540px;">
+                                        <div class="row g-0">
+                                            <div class="col-md-4 text-center">
+                                                <img src="assets/gift.png" class="img-fluid rounded-start" alt="..." />
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Gift</h5>
+                                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad autem ex corrupti dolorum magni veritatis veniam, aut!</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-6">
+                                        <div class="row">
+                                            <div class="col-6">1等　Amazon　カード</div>
+                                            <div class="col-6 text-end"><img src="assets/gift.png" class="" height="30"></div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <div id="modal-gif" class="text-center py-2 ">
+                                    <button type="button" class="btn mb-2 w-200 bg-cobalt text-white"  data-bs-toggle="modal" data-bs-target="#exampleModal">景品交換する</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -294,7 +325,7 @@
             LIST_RESULT = ['assets/win.png', 'assets/lose.png', 'assets/win.png' ,'assets/win.png']
             LINK_RESULT = LIST_RESULT[Math.floor(Math.random() * LIST_RESULT.length)]
             
-
+            // switchSection(7)
             function fillDataConfirm() {
                 $('.cf-user_code').html($('input[name="user_code"]').val())
                 $('.cf-fullname').html($('input[name="fullname"]').val())
@@ -311,20 +342,22 @@
                 fillDataConfirm();
                 if (step == 5) {
                     setTimeout(function(){
-                        switchSection(7)
+                        switchSection(6)
                     }, 5000);
                 }
                 if (step == 6) {
                     setTimeout(function(){
                         switchSection(7)
-                    }, 5000);
+                    }, 2000);
                 }
             }
             
             function initResult() {
                 $('#end-result').attr('src', LINK_RESULT);
                 if (LINK_RESULT == 'assets/win.png') {
-                    $('#modal-gif').removeClass('d-none');
+                    $('.result-lose').addClass('d-none');
+                } else {
+                    $('.result-win').addClass('d-none');
                 }
             }
 
