@@ -30,12 +30,12 @@
             <!-- Begin page content -->
             <main class="flex-shrink-0">
 
-                <!-- Section 10 -->
+                <!-- Section 0 -->
                 <div class="section section-0">
                     <div class="my-3 p-3 bg-body rounded">
                         <div class="d-grid gap-2 col-6 mx-auto mt-p20">
                             <button class="btn bg-cobalt text-white mb-3 py-3" type="button" onclick="switchSection(1)">既存のお客様</button>
-                            <button class="btn bg-cobalt text-white mb-3 py-3" type="button" onclick="switchSection(1)">新規のお客様</button>
+                            <button class="btn bg-cobalt text-white mb-3 py-3" type="button" onclick="switchSection(1,1)">新規のお客様</button>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,35 @@
                         </div>
                     </div>
                     <div class="text-center pb-3">
-                        <button class="btn bg-cobalt text-white px-5" onclick="switchSection(2)">アンケートに進む</a>
+                        <button id="nextstep-2" class="btn bg-cobalt text-white px-5" onclick="switchSection(2)">アンケートに進む</button>
+                    </div>
+                </div>
+
+                <!-- Section 2a -->
+                <div class="section section-2a d-none">
+                    <div class="text-center mt-p20">
+                        <div class="my-3 p-3 bg-body rounded shadow-sm">
+                            <form>
+                                <h1 class="h3 mb-3 fw-normal">メールアドレスを入力してください。</h1>
+                                <div class=" mb-3">
+                                    <input type="email" class="form-control" id="floatingInput" placeholder="Email" />
+                                </div>
+                                <button type="button" class="btn mb-2 w-200 bg-cobalt text-white" onclick="switchSection('2b')">メール送信</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2b -->
+                <div class="section section-2b d-none">
+                    <div class="text-center mt-p20">
+                        <div class="my-3 p-3 bg-body rounded shadow-sm">
+                            <div class=" py-5 text-center">
+                                <h2> ご入力ありがとうございます</h2> 
+                                <div class="font-14"> メールを確認し、メールに記載のURLへアクセスし、</div>
+                                <div class="font-14"> アンケートを回答してください</div>
+                             </div>
+                        </div>
                     </div>
                 </div>
 
@@ -247,8 +275,8 @@
                         <div class="text-center">
                             <img id="end-result" src="" class="" height="300">
                         </div>
-                        <div id="modal-gif" class="text-center py-3 d-none">
-                            <button type="button" class="btn mb-2 w-200 bg-cobalt text-white"  data-bs-toggle="modal" data-bs-target="#exampleModal">景品交換する</button>
+                        <div id="claim_gift" class="text-center py-3">
+                            <button type="button" class="btn mb-2 w-200 bg-cobalt text-white" onclick="switchSection(7)">景品交換する</button>
                         </div>
                     </div>
                 </div>
@@ -286,7 +314,7 @@
                                     </div> -->
                                 </div>
                                 <div id="modal-gif" class="text-center py-2 ">
-                                    <button type="button" class="btn mb-2 w-200 bg-cobalt text-white"  data-bs-toggle="modal" data-bs-target="#exampleModal">景品交換する</button>
+                                    <button type="button" class="btn mb-2 w-200 bg-cobalt text-white" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="$(this).attr('disabled', true).html('既に交換しております。')">景品交換する</button>
                                 </div>
                             </div>
                         </div>
@@ -311,7 +339,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <footer class="footer mt-auto py-3 bg-light">
@@ -324,8 +351,7 @@
         <script>
             LIST_RESULT = ['assets/win.png', 'assets/lose.png', 'assets/win.png' ,'assets/win.png']
             LINK_RESULT = LIST_RESULT[Math.floor(Math.random() * LIST_RESULT.length)]
-            
-            // switchSection(7)
+            SEND_EMAIL = 0;
             function fillDataConfirm() {
                 $('.cf-user_code').html($('input[name="user_code"]').val())
                 $('.cf-fullname').html($('input[name="fullname"]').val())
@@ -336,19 +362,24 @@
             }
 
             initResult();
-            function switchSection(step = 1) {
+            function switchSection(step = 1, send_email = 0) {
+                if (send_email) {
+                    SEND_EMAIL = 1;
+                    $('#nextstep-2').html('メール送信へ');
+                }
                 $('.section').addClass('d-none');
                 $('.section-' + step).removeClass('d-none');
                 fillDataConfirm();
+
+                if (step == 2 && SEND_EMAIL) {
+                    switchSection('2a')
+                    SEND_EMAIL = 0;
+                }
+
                 if (step == 5) {
                     setTimeout(function(){
                         switchSection(6)
                     }, 5000);
-                }
-                if (step == 6) {
-                    setTimeout(function(){
-                        switchSection(7)
-                    }, 2000);
                 }
             }
             
@@ -357,6 +388,7 @@
                 if (LINK_RESULT == 'assets/win.png') {
                     $('.result-lose').addClass('d-none');
                 } else {
+                    $('#claim_gift').addClass('d-none');
                     $('.result-win').addClass('d-none');
                 }
             }
