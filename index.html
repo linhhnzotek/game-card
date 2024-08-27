@@ -89,7 +89,7 @@
 
                 <!-- Section 2a -->
                 <div class="section section-2a d-none">
-                    <div class="text-center mt-p20">
+                    <div class="text-center mt-p10">
                         <div class="my-3 p-3 bg-body rounded shadow-sm">
                             <form>
                                 <h1 class="h3 mb-3 fw-normal">メールアドレスを入力してください。</h1>
@@ -104,7 +104,7 @@
 
                 <!-- Section 2b -->
                 <div class="section section-2b d-none">
-                    <div class="text-center mt-p20">
+                    <div class="text-center mt-p10">
                         <div class="my-3 p-3 bg-body rounded shadow-sm">
                             <div class=" py-5 text-center">
                                 <h2> ご入力ありがとうございます</h2> 
@@ -274,6 +274,10 @@
                     <div class="my-3 p-3 bg-body rounded shadow-sm">
                         <div class="text-center">
                             <img id="end-result" src="" class="" height="300">
+                            <div id="text_fail" class="font-12 mt-2">
+                                <div>残念。</div>
+                                <div>アンケートにご協力を頂きありがとうございました</div>
+                            </div>
                         </div>
                         <div id="claim_gift" class="text-center py-3">
                             <button type="button" class="btn mb-2 w-200 bg-cobalt text-white" onclick="switchSection(7)">景品交換する</button>
@@ -349,7 +353,7 @@
         <script src="assets/bootstrap-5.0.2-dist/js/bootstrap.min.js" /></script>
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
         <script>
-            LIST_RESULT = ['assets/win.png', 'assets/lose.png', 'assets/win.png' ,'assets/win.png']
+            LIST_RESULT = ['assets/win.png', 'assets/lose.png']
             LINK_RESULT = LIST_RESULT[Math.floor(Math.random() * LIST_RESULT.length)]
             SEND_EMAIL = 0;
             function fillDataConfirm() {
@@ -360,7 +364,7 @@
                 $('.cf-q3').html($('select[name="q3"]').val())
                 $('.cf-q4').html($( 'textarea[name="q4"]' ).val().replace(/\n/g, '<br />'))
             }
-
+            // switchSection(6)
             initResult();
             function switchSection(step = 1, send_email = 0) {
                 if (send_email) {
@@ -387,6 +391,7 @@
                 $('#end-result').attr('src', LINK_RESULT);
                 if (LINK_RESULT == 'assets/win.png') {
                     $('.result-lose').addClass('d-none');
+                    $('#text_fail').addClass('d-none');
                 } else {
                     $('#claim_gift').addClass('d-none');
                     $('.result-win').addClass('d-none');
